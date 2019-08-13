@@ -151,6 +151,15 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</max_width>
+						<icon translate="label comment">
+							<label>Icon</label>	
+							<comment>If using the iconDesktop or iconTouch options, this sets the content for your icon. Default: '(?)'</comment>
+							<frontend_type>text</frontend_type>							
+							<sort_order>45</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</icon>
 						<icon_desktop translate="label comment">
 							<label>Icon Desktop</label>	
 							<comment>Generate an icon next to your content that is responsible for activating the tooltip on non-touch devices. Default: No</comment>

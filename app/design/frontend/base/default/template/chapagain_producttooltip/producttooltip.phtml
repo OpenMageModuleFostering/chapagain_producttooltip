@@ -27,6 +27,8 @@ jQuery(document).ready(function() {
 		
 		maxWidth: <?php echo $this->helper('producttooltip')->getMaxWidth() ?>, // Set a maximum width for the tooltip. Default: null (no max width)
 		
+		icon: '<?php echo $this->helper('producttooltip')->getIcon() ?>', // If using the iconDesktop or iconTouch options, this sets the content for your icon. Default: '(?)'
+		
 		iconDesktop: <?php echo $this->helper('producttooltip')->getIconDesktop() ?>, // Generate an icon next to your content that is responsible for activating the tooltip on non-touch devices. Default: false
 		
 		iconTouch: <?php echo $this->helper('producttooltip')->getIconTouch() ?>, // Generate an icon next to your content that is responsible for activating the tooltip on touch devices (tablets, phones, etc). Default: false
@@ -76,7 +78,7 @@ foreach ($_productCollection as $_product):
 	
 ?>
 
-	jQuery("a[href='<?php echo $_product->getProductUrl() ?>']").attr("title", "<?php echo "<div style='text-align:left'>" . $name . $price . $rating . $shortDescription . $attributes . '</div>' ?>");
+	jQuery("a.product-image[href='<?php echo $_product->getProductUrl() ?>']").attr("title", "<?php echo "<div style='text-align:left'>" . $name . $price . $rating . $shortDescription . $attributes . '</div>' ?>");
 				
 <?php endforeach; ?>
 

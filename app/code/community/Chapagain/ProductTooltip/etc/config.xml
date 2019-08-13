@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Chapagain_ProductTooltip>
-            <version>0.1.1</version>
+            <version>0.1.2</version>
         </Chapagain_ProductTooltip>
     </modules> 
     <frontend>
@@ -98,8 +98,9 @@
 				<delay>200</delay>
 				<min_width>0</min_width>
 				<max_width>300</max_width>
+				<icon>(?)</icon>
 				<icon_desktop>0</icon_desktop>
-				<icon_touch>0</icon_touch>
+				<icon_touch>1</icon_touch>
 				<position>top</position>
 				<speed>350</speed>
 				<theme>shadow</theme>

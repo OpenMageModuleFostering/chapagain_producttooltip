@@ -101,6 +101,12 @@ class Chapagain_ProductTooltip_Helper_Data extends Mage_Core_Helper_Abstract
 		return $value > 0 ? $value : null;
     }
     
+    public function getIcon()
+    { 		
+        $value = trim(Mage::getStoreConfig('chapagain_producttooltip/design/icon'));
+        return empty($value) ? '(?)' : $value;
+    }
+    
     public function getIconDesktop()
     { 		
         $value = Mage::getStoreConfig('chapagain_producttooltip/design/icon_desktop');
