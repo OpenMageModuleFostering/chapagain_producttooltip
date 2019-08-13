@@ -1,7 +1,9 @@
 <?php 
 echo $this->getChildHtml('child.product_list');
 
-if ($this->helper('producttooltip')->getIsEnabled()):
+if ($this->helper('producttooltip')->getIsEnabled() && 
+	$this->helper('producttooltip')->checkDisplayMode()
+	):
 
 $_productCollection=$this->getLoadedProductCollection(); 
 ?>

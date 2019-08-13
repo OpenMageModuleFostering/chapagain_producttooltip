@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Chapagain_ProductTooltip>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Chapagain_ProductTooltip>
     </modules> 
     <frontend>
@@ -90,6 +90,8 @@
 				<show_short_description>1</show_short_description>
 				<show_attribute>1</show_attribute>
 				<show_attribute_product_listing>1</show_attribute_product_listing>
+				<show_in_grid_mode>1</show_in_grid_mode>
+				<show_in_list_mode>1</show_in_list_mode>
 			</general>
 			<design>
 				<animation>fade</animation>

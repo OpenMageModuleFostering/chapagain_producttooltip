@@ -41,6 +41,41 @@ class Chapagain_ProductTooltip_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfig('chapagain_producttooltip/general/show_attribute_product_listing');
     }
     
+    public function getShowInGridMode()
+    { 
+		return Mage::getStoreConfig('chapagain_producttooltip/general/show_in_grid_mode');
+	}
+	
+	public function getShowInListMode()
+	{ 
+		return Mage::getStoreConfig('chapagain_producttooltip/general/show_in_list_mode');
+	}
+	
+	public function getCurrentDisplayMode()
+	{
+		return Mage::app()->getLayout()->createBlock('catalog/product_list_toolbar')->getCurrentMode();
+	}
+	
+	public function checkDisplayMode()
+	{
+		$displayMode = array();
+		
+		if ($this->getShowInGridMode()) {
+			$displayMode[] = 'grid';
+		}
+		
+		if ($this->getShowInListMode()) {
+			$displayMode[] = 'list';
+		}
+		
+		if (in_array($this->getCurrentDisplayMode(), $displayMode)) {		
+			return true;
+		}
+		
+		return false;		
+	}
+	
+    
     /**
      * Tooltip Design Configuration Settings
      */ 
