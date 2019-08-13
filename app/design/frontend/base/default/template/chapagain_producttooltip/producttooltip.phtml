@@ -1,0 +1,83 @@
+<?php 
+echo $this->getChildHtml('child.product_list');
+
+if ($this->helper('producttooltip')->getIsEnabled()):
+
+$_productCollection=$this->getLoadedProductCollection(); 
+?>
+
+<script type="text/javascript">
+	
+/*jQuery(document).ready(function($) {
+	alert("js is working");
+});*/
+
+jQuery(document).ready(function() {	
+	jQuery('.producttooltip').tooltipster({ 
+		
+		animation: '<?php echo $this->helper('producttooltip')->getAnimation() ?>', // Determines how the tooltip will animate in and out. Feel free to modify or create custom transitions in the tooltipster.css file. In IE9 and 8, all animations default to a JavaScript generated, fade animation. Default: 'fade' (fade, grow, swing, slide, fall)
+		
+		contentAsHTML: true, // If the content of the tooltip is provided as a string, it is displayed as plain text by default. If this content should actually be interpreted as HTML, set this option to true. Default: false
+		
+		delay: <?php echo $this->helper('producttooltip')->getDelay() ?>, // Delay how long it takes (in milliseconds) for the tooltip to start animating in. Default: 200
+		
+		minWidth: <?php echo $this->helper('producttooltip')->getMinWidth() ?>, // Set a minimum width for the tooltip. Default: 0 (auto width)
+		
+		maxWidth: <?php echo $this->helper('producttooltip')->getMaxWidth() ?>, // Set a maximum width for the tooltip. Default: null (no max width)
+		
+		iconDesktop: <?php echo $this->helper('producttooltip')->getIconDesktop() ?>, // Generate an icon next to your content that is responsible for activating the tooltip on non-touch devices. Default: false
+		
+		iconTouch: <?php echo $this->helper('producttooltip')->getIconTouch() ?>, // Generate an icon next to your content that is responsible for activating the tooltip on touch devices (tablets, phones, etc). Default: false
+		
+		position: '<?php echo $this->helper('producttooltip')->getPosition() ?>', // Set the position of the tooltip. Default: 'top' (right, left, top, top-right, top-left, bottom, bottom-right, bottom-left)
+		
+		speed: <?php echo $this->helper('producttooltip')->getSpeed() ?>, // Set the speed of the animation. Default: 350
+		
+		theme: "tooltipster-<?php echo $this->helper('producttooltip')->getTheme() ?>", // Set the theme used for your tooltip. Default: 'tooltipster-default' (tooltipster-noir, tooltipster-light, tooltipster-punk, tooltipster-shadow)
+		
+		touchDevices: <?php echo $this->helper('producttooltip')->getTouchDevices() ?>, // If set to false, tooltips will not show on pure-touch devices, unless you open them yourself with the 'show' method. Touch gestures on devices which also have a mouse will still open the tooltips though. Default: true
+		
+	});
+});    
+
+jQuery('.products-list').find('.product-image').addClass('producttooltip');	
+jQuery('.products-grid').find('.product-image').addClass('producttooltip');	
+
+<?php 
+
+foreach ($_productCollection as $_product): 
+	
+	$ratingSummary = 0;
+	if ($_product->getRatingSummary()):
+		$ratingSummary = $_product->getRatingSummary()->getRatingSummary();
+	endif;
+	
+	if ($this->helper('producttooltip')->getShowName()):
+		$name = '<p><strong>' . $this->stripTags($_product->getName(), null, true) . '</strong><br>';
+	endif;	
+	
+	if ($this->helper('producttooltip')->getShowPrice()):
+		$price = preg_replace('/\s+/', ' ', $this->stripTags($this->getPriceHtml($_product, true), null, true)) . '</p>';
+	endif;
+	
+	if ($this->helper('producttooltip')->getShowRating()):
+		$rating = '<p><div class=\"ratings\"><div class=\"rating-box\"><div class=\"rating\" style=\"width:'. $ratingSummary .'%\"></div></div></div></p>';
+	endif;
+	
+	if ($this->helper('producttooltip')->getShowShortDescription()):
+		$shortDescription = '<p>' . preg_replace('/\s+/', ' ', nl2br($this->stripTags($_product->getShortDescription(), null, true))) . '</p>';
+	endif;
+	
+	if ($this->helper('producttooltip')->getShowAttribute()):
+		$attributes = '<p>'.preg_replace('/\s+/', ' ', str_replace('"', '\"', $this->helper('producttooltip')->getAttributeTable($_product))).'</p>';
+	endif;
+	
+?>
+
+	jQuery("a[href='<?php echo $_product->getProductUrl() ?>']").attr("title", "<?php echo "<div style='text-align:left'>" . $name . $price . $rating . $shortDescription . $attributes . '</div>' ?>");
+				
+<?php endforeach; ?>
+
+</script>
+
+<?php endif; // if is_enabled ?>

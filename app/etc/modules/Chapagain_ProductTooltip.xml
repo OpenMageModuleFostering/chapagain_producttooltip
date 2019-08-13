@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Chapagain_ProductTooltip>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Chapagain_ProductTooltip>
+    </modules>
+</config> 

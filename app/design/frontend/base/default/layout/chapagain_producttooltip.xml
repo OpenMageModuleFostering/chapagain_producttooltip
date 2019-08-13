@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+		<reference name="head">
+            <action method="addItem" ifconfig="chapagain_producttooltip/general/is_enabled"><type>skin_css</type><name>css/chapagain_producttooltip/tooltipster.css</name></action>
+            <action method="addCss" ifconfig="chapagain_producttooltip/general/is_enabled"><stylesheet>css/chapagain_producttooltip/themes/tooltipster-light.css</stylesheet></action>
+            <action method="addCss" ifconfig="chapagain_producttooltip/general/is_enabled"><stylesheet>css/chapagain_producttooltip/themes/tooltipster-noir.css</stylesheet></action>
+            <action method="addCss" ifconfig="chapagain_producttooltip/general/is_enabled"><stylesheet>css/chapagain_producttooltip/themes/tooltipster-punk.css</stylesheet></action>
+            <action method="addCss" ifconfig="chapagain_producttooltip/general/is_enabled"><stylesheet>css/chapagain_producttooltip/themes/tooltipster-shadow.css</stylesheet></action>
+            
+			<action method="addItem" ifconfig="chapagain_producttooltip/general/is_enabled"><type>skin_js</type><name>js/chapagain_producttooltip/jquery-1.7.0.min.js</name></action>
+			<action method="addItem" ifconfig="chapagain_producttooltip/general/is_enabled"><type>skin_js</type><name>js/chapagain_producttooltip/jquery-noconflict.js</name></action>
+			<action method="addItem" ifconfig="chapagain_producttooltip/general/is_enabled"><type>skin_js</type><name>js/chapagain_producttooltip/jquery.tooltipster.min.js</name></action>			
+        </reference>
+    </default>
+    
+</layout> 
