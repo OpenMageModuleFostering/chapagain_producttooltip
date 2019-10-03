@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Chapagain_ProductTooltip",
+    "name": "OpenMageModuleFostering\/Chapagain_ProductTooltip",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "This extension shows product's information as tooltip on category page (product listing page).",
     "authors": [
-    {
-        "name": "Mukesh Chapagain",
-        "email": "mukesh.chapagain@gmail.com"
-    }
-],
+        {
+            "name": "Mukesh Chapagain",
+            "email": "mukesh.chapagain@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
